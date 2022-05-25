@@ -1,3 +1,6 @@
+"""
+Animates a TMD system over time using a system of ordinary differential equations
+"""
 using DifferentialEquations
 using Plots
 using ParameterizedFunctions
