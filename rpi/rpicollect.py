@@ -1,6 +1,6 @@
-	"""
-	Collects data from 2 vl6180x sensors and stores it into a .csv file
-	"""
+"""
+Collects data from 2 vl6180x sensors and stores it into a .csv file
+"""
 import time
 import board
 import busio
