@@ -1,7 +1,29 @@
-# TMD
-Various short scripts to process, visualise and simulate data from a tuned mass damper system
-RPI folder contains a script used to gather data from VL6180X sensors as well as a file to change the address used by I²C to allow multiple sensors on the same Raspberry Pi.
+# TunedMassDamper
+![Visualisation](Simulation.jl/interactive.png)
+Repo contains multiple scripts used in conjunction with a project attempting to acquire an insight into the coupling of a mass damper to an oscillating object and the resulting mechanisms to dissipate energy.
 
-Simulation folder contains 2 programs used to plot and animate a tuned mass damper system.
+## dataCollection
+Contains python code to be used with an R-Pi and two VL6180X sensors.  
 
-Visualisation folder contains 3 programs used to plot the experimental data acquired using the RPI setup.
+XSHUT to the second sensor is pulled low to prevent it from interfering with the first sensor at the start of the program, and then pulled high to allow it to be used.
+Wiring diagram:
+![Wiring diagram](dataCollection/wiringDiagram.png)
+## plotting
+Code to process data acquired by R-Pi, contains two scripts:
+* plotData.py - plots the data from the R-Pi with residual plots and regression models to determine the best fit for the coupled tuned mass damper system.
+
+* mechEnergy.py - plots the mechanical energy of the system as a function of time, and the mechanical energy of the system as a function of the displacement of the mass, here it can be seen that the mechanical energy is dissipated by the damper.
+
+Visualisation from plotData.py:  
+![Visualisation](plotting/plotData.png)
+
+Visualisation from mechEnergy.py:  
+![Visualisation](plotting/mechEnergy.png)
+
+## Simulation.jl
+Contains code to simulate the coupled tuned mass damper system, and to plot the results. Written in Julia with GLMakie for gpu accelerated plotting. Folder contains two scripts:
+* simTMD.jl - contains the code to simulate the coupled tuned mass damper system, and returns the results in a gif.
+* interactive.jl - contains the code to simulate the coupled tuned mass damper system with an interactive session in GLMakie, allowing the user to change the parameters of the system and see the results.
+
+interactive.jl:
+![Visualisation](Simulation.jl/interactive.png)
