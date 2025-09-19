@@ -1,3 +1,6 @@
+<h1>
+  I no longer use GitHub, go to my <a href="https://git.argmin.dk/joshnie"> self-hosted Forgejo </a> server instead for my work and projects.
+</h1>
 # TunedMassDamper
 ![Visualisation](Simulation.jl/interactive.png)
 Repo contains multiple scripts used in conjunction with a project attempting to acquire an insight into the coupling of a mass damper to an oscillating object and the resulting mechanisms to dissipate energy.
